@@ -1,11 +1,13 @@
 # 2D-Feature-Tracking
 
 ## 1. Data Buffer Optimization
-In order to track features in the preceding vehicle, two consecutive image frames of the scene are required. In this code, we will store these two frames in a buffer of fixed size of two. When the first image is processed, all its data such as keypoints and descriptors are stored in a data structure that is pushed into the buffer. When the second frame arrives, it is pushed to the buffer as well. Once the buffer is full, the keypoint match process between both frames can take place. When a new frame is pushed into the buffer, the oldest frame will be deleted. This is a good way to maintain the memory. This is implemented in lines 63 to 74. 
+In order to track features in the preceding vehicle, two consecutive image frames of the scene are required. In this code, we will store these two frames in a buffer of fixed size of two. When the first image is processed, all its data such as keypoints and descriptors are stored in a data structure that is pushed into the buffer. When the second frame arrives, it is pushed to the buffer as well. Once the buffer is full, the keypoint match process between both frames can take place. When a new frame is pushed into the buffer, the oldest frame will be deleted. This is a good way to maintain the memory. 
+
+*This is implemented in lines 63 to 74 in MidTermProject_Camera_Studet.cpp* 
 
 ## 2. Keypoint Detection
 
-This program enables the user to choose among different keypoint detectors by setting a string variable. This is implemented in the file matching_2D_student.cpp in the function detKeypointsModern. The following keypoint detectors are available to choose from:
+This program enables the user to choose among different keypoint detectors by setting the string variable detectorType. The following keypoint detectors are available to choose from:
 - HARRIS
 - FAST
 - BRISK 
@@ -13,14 +15,17 @@ This program enables the user to choose among different keypoint detectors by se
 - AKAZE
 - SIFT
  
+ *This is implemented in lines 103 to 113 in MidTermProject_Camera_Student.cpp*
 
 ## 3. Keypoint Removal
 
-A good way to limit the keypoints detection in the preceding vehicle is to draw a bounding box around it. Keypoints outside this region are discarded. The coordinates of the box that enclose the vehicle are cx = 535, cy = 180, w = 180, h = 150. This is implemented like this:
+A good way to limit the keypoints detection in the preceding vehicle is to draw a bounding box around it. Keypoints outside this region are discarded. The coordinates of the box that enclose the vehicle are cx = 535, cy = 180, w = 180, h = 150. 
+
+*This is implemented in line 119 in MidTermProject_Camera_Student.cpp*
 
 ## 4. Descriptor Extraction
 
-A variety of descriptor extractors are available to choose by setting the string variable descriptorType in the function descExtract. The following extractors are available:
+A variety of descriptor extractors are available to choose by setting the string variable descriptorType. The following extractors are available:
 
 - BRIEF
 - ORB
@@ -28,6 +33,7 @@ A variety of descriptor extractors are available to choose by setting the string
 - AKAZE
 - SIFT
 
+*This is implemented in line 174 in MidTermProject_Camera_Student.cpp*
 ## 5. Descriptor Matching
 
 Matching is implemented in the function "". Two different matching methods can be selected:
