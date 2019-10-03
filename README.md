@@ -36,23 +36,21 @@ A variety of descriptor extractors are available to choose by setting the string
 *This is implemented in line 174 in MidTermProject_Camera_Student.cpp*
 ## 5. Descriptor Matching
 
-Matching is implemented in the function "". Two different matching methods can be selected:
+The function matchDescriptors in matching2D_Student.cpp uses FLANN or KNN to match descriptors. 
 
-- FLANN
-- KNN
+*This is implemented in line 196 in MidTermProject_Camera_Student.cpp*
 
 ## 6. Descriptor Filtering
-A distance test ratio is used as a way to remove bad pair of keypoint matches. This is implemented in the function knn.
+A distance test ratio is used as a way to remove bad pair of keypoint matches. This is implemented inside the function matchDescriptors in matching2D_Student.cpp.
 
 ## 7. Performance Evaluation: Criteria 1
-To evaluate which keypoint detector is the best, we run all the detectors for all ten images. The results are written into a csv file. The results show the following:
+To evaluate which keypoint detector is the best, we run all the detectors for all ten images and we compare how many keypoints are detected in each one. The results are stored in the file *build/Performance_1.csv*.
 
 ## 8. Performance Evaluation: Criteria 2
-A good way to know which detector-extractor is the best one is to count the number of keypoints matched for all the possible combinations. We use the brute force method and the distance test ratio set to 0.8. The results are below:
+A good way to know which detector-extractor is the best one is to count the number of keypoints matched for all the possible combinations. We use the brute force method and the distance test ratio set to 0.8. The results are stored in the file *build/Performance_2.csv*.
 
 ## 9. Performance Evaluatio: Criteria 3
-Another way to know which detector-descriptor combination is the best, is to measure how long the processing time takes. We log the time it takes for keypoint detection and descriptor extraction. The data is written into a csv file. The results are the following:
+Another way to know which detector-descriptor combination is the best, is to measure how long the processing time takes. We log the time it takes for keypoint detection and descriptor extraction. The data is written into a csv file. The results are stored in the file *build/Performance_2.csv*.
 
-## Conclusion
 
 
