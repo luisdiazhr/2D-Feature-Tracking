@@ -52,5 +52,12 @@ A good way to know which detector-extractor is the best one is to count the numb
 ## 9. Performance Evaluatio: Criteria 3
 Another way to know which detector-descriptor combination is the best, is to measure how long the processing time takes. We log the time it takes for keypoint detection and descriptor extraction. The data is written into a csv file. The results are stored in the file *build/Performance_2.csv*.
 
+## Conclusion
+
+According to the data in Performance_2.csv the three fastest combinations of detector-descriptor are:
+
+- FAST-BRIEF
+- FAST-BRISK
+- FAST-ORB
 
 
